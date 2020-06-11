@@ -22,6 +22,8 @@ namespace Lydanghuy_lab456.Controllers
         {
             var viewModel = new CourseViewModel
             {
+
+
                 Categories = _dbContext.Categories.ToList()
             };
             return View(viewModel);
