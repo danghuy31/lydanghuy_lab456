@@ -77,15 +77,39 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.3.1.0\lib\net45\Microsoft.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.1.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.1.0\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -161,14 +185,8 @@
     <Reference Include="Owin">
       <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Owin">
-      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.Owin.Host.SystemWeb">
       <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Owin.Security">
-      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Owin.Security.Facebook">
       <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.0.1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
@@ -182,9 +200,6 @@
     <Reference Include="Microsoft.Owin.Security.Google">
       <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Owin.Security.Twitter">
-      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
       <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
     </Reference>
@@ -195,32 +210,39 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AttendancesController.cs" />
     <Compile Include="Controllers\CoursesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202006110144274_InitialModel.cs" />
-    <Compile Include="Migrations\202006110144274_InitialModel.Designer.cs">
-      <DependentUpon>202006110144274_InitialModel.cs</DependentUpon>
+    <Compile Include="Migrations\202006180335544_InitialModel.cs" />
+    <Compile Include="Migrations\202006180335544_InitialModel.Designer.cs">
+      <DependentUpon>202006180335544_InitialModel.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202006110209123_CreateTableCourse.cs" />
-    <Compile Include="Migrations\202006110209123_CreateTableCourse.Designer.cs">
-      <DependentUpon>202006110209123_CreateTableCourse.cs</DependentUpon>
+    <Compile Include="Migrations\202006180337131_CreateTableCourse.cs" />
+    <Compile Include="Migrations\202006180337131_CreateTableCourse.Designer.cs">
+      <DependentUpon>202006180337131_CreateTableCourse.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202006110211427_PopulateCategoryTable.cs" />
-    <Compile Include="Migrations\202006110211427_PopulateCategoryTable.Designer.cs">
-      <DependentUpon>202006110211427_PopulateCategoryTable.cs</DependentUpon>
+    <Compile Include="Migrations\202006180338104_PopulateCategoryTable.cs" />
+    <Compile Include="Migrations\202006180338104_PopulateCategoryTable.Designer.cs">
+      <DependentUpon>202006180338104_PopulateCategoryTable.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202006130500318_AddNameColumnToApplicationUser.cs" />
-    <Compile Include="Migrations\202006130500318_AddNameColumnToApplicationUser.Designer.cs">
-      <DependentUpon>202006130500318_AddNameColumnToApplicationUser.cs</DependentUpon>
+    <Compile Include="Migrations\202006180341350_addNameColumnToApplicationUser.cs" />
+    <Compile Include="Migrations\202006180341350_addNameColumnToApplicationUser.Designer.cs">
+      <DependentUpon>202006180341350_addNameColumnToApplicationUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006180343527_addAttendance.cs" />
+    <Compile Include="Migrations\202006180343527_addAttendance.Designer.cs">
+      <DependentUpon>202006180343527_addAttendance.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
+    <Compile Include="Models\Attendance.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Course.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
@@ -305,17 +327,20 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202006110144274_InitialModel.resx">
-      <DependentUpon>202006110144274_InitialModel.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202006180335544_InitialModel.resx">
+      <DependentUpon>202006180335544_InitialModel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202006110209123_CreateTableCourse.resx">
-      <DependentUpon>202006110209123_CreateTableCourse.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202006180337131_CreateTableCourse.resx">
+      <DependentUpon>202006180337131_CreateTableCourse.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202006110211427_PopulateCategoryTable.resx">
-      <DependentUpon>202006110211427_PopulateCategoryTable.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202006180338104_PopulateCategoryTable.resx">
+      <DependentUpon>202006180338104_PopulateCategoryTable.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202006130500318_AddNameColumnToApplicationUser.resx">
-      <DependentUpon>202006130500318_AddNameColumnToApplicationUser.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202006180341350_addNameColumnToApplicationUser.resx">
+      <DependentUpon>202006180341350_addNameColumnToApplicationUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006180343527_addAttendance.resx">
+      <DependentUpon>202006180343527_addAttendance.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

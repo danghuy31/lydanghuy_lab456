@@ -13,7 +13,7 @@ namespace Lydanghuy_lab456.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202006110144274_InitialModel"; }
+            get { return "202006180335544_InitialModel"; }
         }
         
         string IMigrationMetadata.Source
